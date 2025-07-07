@@ -7,22 +7,48 @@ A fast and efficient tool for identifying microsatellite repeat motifs in genome
 ### Prerequisites
 - Python 3.x
 - C compiler (gcc/clang)
-- BioPython library
+- Git
 
+### Setup Instructions
+
+1. **Clone the repository:**
+```bash
+git clone git@github.com:agb-ku/microsatnavigator.git
+cd microsatnavigator
+```
+
+2. **Create and activate virtual environment:**
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. **Install the C extension:**
+```bash
+cd py-extension/src
+python setup.py install
+```
+
+4. **Install with pip (choose one):**
+```bash
+# Standard installation
+pip install .
+
+# Development installation (editable)
+pip install -e .
+```
+
+5. **Verify installation:**
+```bash
+python -c "import microsatellite"
+```
+
+If no errors occur, the installation is successful.
+
+### Install BioPython (if needed)
 ```bash
 pip install biopython
 ```
-
-### Build C Extension
-
-1. Clone/download the project files
-2. Build the microsatellite C extension:
-
-```bash
-python setup.py build_ext --inplace
-```
-
-This will compile the `microsatellite.c` extension and make it available for import in Python.
 
 ## Quick Usage
 
